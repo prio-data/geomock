@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "geomock"
+version = "1.0.0"
+description = "'"
+authors = ["peder2911 <pglandsverk@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = ">=3.8,<=3.10"
+numpy = "^1.21.2"
+Shapely = "^1.7.1"
+click = "^8.0.1"
+shapely-geojson = "^0.0.1"
+
+[tool.poetry.dev-dependencies]
+matplotlib = "^3.4.3"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+geomock = "geomock.cli:cli"
