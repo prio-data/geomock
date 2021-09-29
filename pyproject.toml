@@ -11,6 +11,8 @@ numpy = "^1.21.2"
 Shapely = "^1.7.1"
 click = "^8.0.1"
 shapely-geojson = "^0.0.1"
+PyMonad = "^2.4.0"
+toolz = "^0.11.1"
 
 [tool.poetry.dev-dependencies]
 matplotlib = "^3.4.3"
