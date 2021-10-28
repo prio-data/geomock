@@ -7,4 +7,4 @@ def recenter(new_centroid, geom):
     origin = np.array(geom.centroid.xy)
     new = np.array(new_centroid.xy)
     diff = new - origin
-    return Just(translate(geom, *diff))
+    return translate(geom, *diff)

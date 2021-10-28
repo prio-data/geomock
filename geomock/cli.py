@@ -30,8 +30,7 @@ def polygon(
             properties = {k:util.microparse(v) for k,v in property}
             )
 
-
     if centroid_x is not None and centroid_y is not None:
         feature = feature.map(curry(ops.recenter, Point((centroid_x, centroid_y))))
 
-    feature.maybe(None, compose(click.echo, shapely_geojson.dumps))
+    click.echo(shapely_geojson.dumps(feature))
