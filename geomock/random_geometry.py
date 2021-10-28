@@ -31,7 +31,7 @@ def with_normal_extent(fn):
 
 @array_shape(geometry.Polygon)
 @with_normal_extent
-def random_polygon(points: int, noise: float = .1)-> geometry.Polygon:
+def polygon(points: int, noise: float = .1)-> geometry.Polygon:
     a = ((np.linspace(1, points, points) / points)*3.14)*2
     a = np.concatenate([a, [a[0]]])
     rnd = np.concatenate([[0], np.random.rand(points-1)*noise, [0]])

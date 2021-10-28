@@ -6,7 +6,7 @@ import click
 from pymonad.maybe import Nothing
 from shapely.geometry import Point
 import shapely_geojson
-from . import random_geometry, ops, util, mappable_feature
+from . import random_feature, ops, util, mappable_feature
 
 @click.group()
 def cli():
@@ -25,10 +25,7 @@ def polygon(
         centroid_y: float = 0.0,
         property: List[Tuple[str,str]] = []):
 
-    feature = mappable_feature.Feature(
-            random_geometry.random_polygon(points, noise),
-            properties = {k:util.microparse(v) for k,v in property}
-            )
+    feature = random_feature.polygon(points, noise, {k: util.microparse(v) for k,v in property})
 
     if centroid_x is not None and centroid_y is not None:
         feature = feature.map(curry(ops.recenter, Point((centroid_x, centroid_y))))
